@@ -14,7 +14,8 @@ from langchain.memory import ConversationBufferMemory
 # from langchain.chat_models import ChatOpenAI
 
 
-
+load_dotenv() # carrega as variáveis do .env
+OPENAI_API_KEY = config('OPENAI_API_KEY')
 os.environ['OPENAI_API_KEY'] = config('OPENAI_API_KEY')
 
 
@@ -49,8 +50,6 @@ st.sidebar.markdown('Este agente consulta o banco de dados das Autuações utili
 
 st.write('Peça um relatório completo ou faça perguntas sobre as multas, como valor mensal, anual ou em relação ao ano anterior.')
 user_question = st.text_input('O que deseja saber?')
-
-load_dotenv() # carrega as variáveis do .env
 
 # CRIAÇÃO DO AGENTE
 model = ChatOpenAI(
