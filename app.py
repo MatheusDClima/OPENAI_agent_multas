@@ -2,7 +2,7 @@ import os
 from dotenv import load_dotenv
 import streamlit as st
 
-from decouple import config
+# from decouple import config
 
 from langchain import hub
 from langchain.agents import create_react_agent, AgentExecutor
