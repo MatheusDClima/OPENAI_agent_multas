@@ -1,0 +1,37 @@
+# --- Arquivos de ambiente virtual ---
+.venv/
+venv/
+env/
+ENV/
+
+# --- Arquivos de configuração de API/segurança ---
+.env
+*.key
+*.pem
+
+# --- Cache do Python ---
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.pkl
+
+# --- Logs ---
+*.log
+
+# --- Banco de dados local ---
+*.db
+*.sqlite3
+*.csv
+
+# --- Configurações do sistema/IDE ---
+.vscode/
+.idea/
+*.iml
+
+# --- Arquivos do Streamlit ---
+.streamlit/
+
+# --- Arquivos temporários ---
+.DS_Store
+Thumbs.db
