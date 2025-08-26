@@ -15,7 +15,7 @@ from langchain.memory import ConversationBufferMemory
 
 
 load_dotenv() # carrega as variáveis do .env
-OPENAI_API_KEY = config('OPENAI_API_KEY')
+
 os.environ['OPENAI_API_KEY'] = config('OPENAI_API_KEY')
 
 
