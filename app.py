@@ -15,9 +15,10 @@ from langchain.memory import ConversationBufferMemory
 
 
 load_dotenv()  # carrega as variáveis do .env automaticamente
-
-# Agora a chave já está no ambiente, basta pegar
 openai_api_key = os.getenv("OPENAI_API_KEY")
+
+if not openai_api_key:
+    raise ValueError("OPENAI_API_KEY não foi encontrado. Verifique seu .env")
 
 
 st.set_page_config(
