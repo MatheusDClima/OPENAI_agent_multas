@@ -11,7 +11,7 @@ from langchain_community.utilities.sql_database import SQLDatabase
 from langchain_community.agent_toolkits.sql.toolkit  import SQLDatabaseToolkit
 from langchain_openai import ChatOpenAI
 from langchain.memory import ConversationBufferMemory
-# from langchain.chat_models import ChatOpenAI
+from langchain.chat_models import ChatOpenAI
 
 
 # força carregar o .env da mesma pasta do app.py
