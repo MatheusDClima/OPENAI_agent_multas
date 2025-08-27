@@ -14,15 +14,11 @@ from langchain.memory import ConversationBufferMemory
 # from langchain.chat_models import ChatOpenAI
 
 
-load_dotenv() # carrega as variáveis do .env
+load_dotenv()  # carrega as variáveis do .env automaticamente
 
-os.environ['OPENAI_API_KEY'] = config('OPENAI_API_KEY')
+# Agora a chave já está no ambiente, basta pegar
+openai_api_key = os.getenv("OPENAI_API_KEY")
 
-
-# if not api_key:
-#     raise ValueError("⚠️ OPENAI_API_KEY não foi encontrado. Verifique seu .env")
-
-# print("Chave carregada com sucesso")
 
 st.set_page_config(
     page_title='Autuações GPT',
@@ -54,7 +50,7 @@ user_question = st.text_input('O que deseja saber?')
 # CRIAÇÃO DO AGENTE
 model = ChatOpenAI(
     model = selected_model,
-    openai_api_key = os.getenv("OPENAI_API_KEY"),
+    openai_api_key = openai_api_key,
     max_retries=5,   # tenta novamente se der RateLimit ou erro de rede
     temperature=0    # opcional: mais previsível p/ queries SQL
 )
