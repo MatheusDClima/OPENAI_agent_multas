@@ -4,24 +4,27 @@ import streamlit as st
 
 from decouple import config
 
+from langchain_google_genai import ChatGoogleGenerativeAI
+
+
 from langchain import hub
 from langchain.agents import create_react_agent, AgentExecutor
 from langchain.prompts import PromptTemplate
 from langchain_community.utilities.sql_database import SQLDatabase
 from langchain_community.agent_toolkits.sql.toolkit  import SQLDatabaseToolkit
-from langchain_openai import ChatOpenAI
 from langchain.memory import ConversationBufferMemory
+# from langchain_openai import ChatOpenAI
 # from langchain.chat_models import ChatOpenAI
 
 
 
 load_dotenv()
 # Tenta pegar do st.secrets (nuvem) ou do ambiente (.env local)
-openai_api_key = st.secrets.get("OPENAI_API_KEY", os.getenv("OPENAI_API_KEY"))
+google_api_key = st.secrets.get("GOOGLE_API_KEY", os.getenv("GOOGLE_API_KEY"))
 
 
-if not openai_api_key:
-    raise ValueError("OPENAI_API_KEY não foi encontrado. Verifique seu .env")
+if not google_api_key:
+    raise ValueError("GOOGLE_API_KEY não foi encontrado. Verifique seu .env")
 
 
 st.set_page_config(
@@ -31,11 +34,8 @@ st.set_page_config(
 st.header('Assistente Autuações Pioneira 🤖')
 
 model_options = [
-    'gpt-3.5-turbo',
-    'gpt-4',
-    'gpt-4-turbo',
-    'gpt-4o-mini',
-    'gpt-4o'
+    'gemini-1.5-flash',
+    'gemini-1.5-pro'
 ]
 
 st.sidebar.image("img/logo.png", width=100)
@@ -52,11 +52,10 @@ st.write('Peça um relatório completo ou faça perguntas sobre as multas, como 
 user_question = st.text_input('O que deseja saber?')
 
 # CRIAÇÃO DO AGENTE
-model = ChatOpenAI(
-    model = selected_model,
-    openai_api_key = openai_api_key,
-    max_retries=5,   # tenta novamente se der RateLimit ou erro de rede
-    temperature=0    # opcional: mais previsível p/ queries SQL
+model = ChatGoogleGenerativeAI(
+    model=selected_model,
+    google_api_key=google_api_key,
+    temperature=0
 )
 
 # CONEXÃO COM O BANCO
