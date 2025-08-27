@@ -1,6 +1,7 @@
 import os
 from dotenv import load_dotenv
 import streamlit as st
+import sqlite3
 
 from decouple import config
 
@@ -65,6 +66,8 @@ toolkit = SQLDatabaseToolkit(
     llm = model
 )
 system_message = hub.pull('hwchase17/react')
+
+
 
 # CRIANDO AGENTE
 agent = create_react_agent(
