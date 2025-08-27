@@ -1,4 +1,4 @@
-# 📄 Assistente de Multas - Viação Pioneira
+# 📄 Assistente de Multas
 
 Este projeto implementa um **Agente de IA** integrado ao **Streamlit** e **LangChain** para consulta e análise das **autuações de trânsito** da empresa.  
 A base de dados utilizada é o arquivo `autuacoes.csv`, convertido para SQLite e conectado ao modelo GPT.
@@ -43,13 +43,13 @@ A utilização do **Assistente de Multas** traz ganhos diretos para o setor da E
 
 "Quantas multas tivemos no último mês?"
 
-"Qual o valor total de autuações em 2024?"
+"Qual o valor total de autuações em 2025?"
 
-"Compare as multas de 2023 com 2024."
+"Compare as multas de 2024 com 2025."
 
 "Quais categorias de infrações mais ocorrem?"
 
 🌟 Impacto Esperado
 
-Com este assistente, o setor Jurídico terá dados confiáveis, acessíveis e estratégicos em tempo real.
+Com este assistente, o setor terá dados confiáveis, acessíveis e estratégicos em tempo real.
 Isso significa menos tempo perdido com planilhas e mais assertividade nas ações jurídicas da empresa.
