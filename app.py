@@ -85,8 +85,8 @@ agent_executor = AgentExecutor(
 
 # PROMPT
 prompt = '''
-    Você é um assistente especializado em autuações da Viação Pioneira.
-    Use as ferramentas necessárias para responder perguntas sobre multas.
+    Você é um assistente especializado nas informações presentes no banco de dados que são multas da Viação Pioneira.
+    Use as ferramentas necessárias para responder perguntas sobre as multas presentes no Banco de Dados.
     Forneça insights sobre quantidade, valores, comparação com ano/mês anterior
     e relatórios conforme solicitado. Sempre responda em português brasileiro.
     resposta: {q}
