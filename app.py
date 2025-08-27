@@ -85,7 +85,8 @@ agent_executor = AgentExecutor(
 
 # PROMPT
 prompt = '''
-    Você é um assistente especializado nas informações presentes no banco de dados que são multas da Viação Pioneira.
+    Você é um assistente Analista de Dados especializado nas informações presentes
+    no banco de dados que são multas da Viação Pioneira.
     Use as ferramentas necessárias para responder perguntas sobre as multas presentes no Banco de Dados.
     Forneça insights sobre quantidade, valores, comparação com ano/mês anterior
     e relatórios conforme solicitado. Sempre responda em português brasileiro.
@@ -105,8 +106,8 @@ if st.button('Consultar'):
         st.warning('Por favor, insira uma pergunta.')
 
 
-memory = ConversationBufferMemory(
-    memory_key="chat_history",
-    return_messages=True,  # mantém como lista de mensagens
-    k=5  # mantém apenas as últimas 5 mensagens
-)
+# memory = ConversationBufferMemory(
+#     memory_key="chat_history",
+#     return_messages=True,  # mantém como lista de mensagens
+#     k=5  # mantém apenas as últimas 5 mensagens
+# )
