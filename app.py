@@ -7,7 +7,6 @@ from decouple import config
 
 from langchain_google_genai import ChatGoogleGenerativeAI
 
-
 from langchain import hub
 from langchain.agents import create_react_agent, AgentExecutor
 from langchain.prompts import PromptTemplate
@@ -31,6 +30,7 @@ if not google_api_key:
 st.set_page_config(
     page_title='Autuações GPT',
     page_icon='img/logo.png',
+    layout="wide"
 )
 st.header('Assistente Autuações Pioneira 🤖')
 
