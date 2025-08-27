@@ -14,8 +14,13 @@ from langchain.memory import ConversationBufferMemory
 # from langchain.chat_models import ChatOpenAI
 
 
+# força carregar o .env da mesma pasta do app.py
+load_dotenv(dotenv_path=os.path.join(os.path.dirname(__file__), ".env"))
+
 load_dotenv()  # carrega as variáveis do .env automaticamente
 openai_api_key = os.getenv("OPENAI_API_KEY")
+
+# print("DEBUG: OPENAI_API_KEY =", os.getenv("OPENAI_API_KEY"))
 
 if not openai_api_key:
     raise ValueError("OPENAI_API_KEY não foi encontrado. Verifique seu .env")
